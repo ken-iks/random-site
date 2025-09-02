@@ -43,3 +43,6 @@ next-env.d.ts
 # db stuff
 *.db
 drizzle/meta
+
+# ai stuff
+claude.md
