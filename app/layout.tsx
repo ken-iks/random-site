@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import BackgroundToggle from "@/components/BackgroundToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lions Hub",
+  title: "PrideScribe",
   description: "Until the lion learns to write, every story will glorify the hunter",
 };
 
@@ -24,14 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let mode = {dark: true};
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${!mode.dark ? '!bg-gray-50' : ''}`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <BackgroundToggle mode={mode} />
         {children}
       </body>
     </html>
